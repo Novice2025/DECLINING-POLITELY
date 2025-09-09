@@ -1,0 +1,942 @@
+<!DOCTYPE a href="https://example.com" target="_blank">html</a>>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Block Method - A Full Guide to Professional Communication</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define the custom colors in Tailwind config for easy use */
+        :root {
+            --dark-background: #141414;
+            --yellow-primary: #ffc700;
+            --red-accent: #E50914;
+            --green-accent: #22c55e;
+            --blue-accent: #3b82f6; 
+            --purple-accent: #8b5cf6;
+            --orange-accent: #f97316;
+            --teal-accent: #14b8a6;
+        }
+
+        /* Custom glow effect for the header on hover */
+        .title-glow-hover:hover {
+            text-shadow: 0 0 5px var(--yellow-primary), 0 0 10px var(--yellow-primary), 0 0 15px var(--yellow-primary);
+            transition: text-shadow 0.3s ease-in-out;
+        }
+
+        /* Define the custom highlight class */
+        .article-highlight {
+            color: var(--yellow-primary);
+            font-weight: 700;
+            font-style: italic;
+        }
+        
+        /* Vertical red bar for content blocks */
+        .content-block-red::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--red-accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Vertical green bar for new content blocks */
+        .content-block-green::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--green-accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Vertical blue bar for new content blocks */
+        .content-block-blue::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--blue-accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Vertical purple bar for educational background section */
+        .content-block-purple::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--purple-accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Vertical orange bar for the new summary section */
+        .content-block-orange::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--orange-accent);
+            border-radius: 4px 0 0 4px;
+        }
+        
+        /* Vertical teal bar for the new nuance section */
+        .content-block-teal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--teal-accent);
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* Hover effects for red content blocks */
+        .content-block-hover-red:hover {
+            background-color: rgba(229, 9, 20, 0.1); /* Semi-transparent red */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effects for green content blocks */
+        .content-block-hover-green:hover {
+            background-color: rgba(34, 197, 94, 0.1); /* Semi-transparent green */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effects for blue content blocks */
+        .content-block-hover-blue:hover {
+            background-color: rgba(59, 130, 246, 0.1); /* Semi-transparent blue */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        /* Hover effects for purple content blocks */
+        .content-block-hover-purple:hover {
+            background-color: rgba(139, 92, 246, 0.1); /* Semi-transparent purple */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effects for orange content blocks */
+        .content-block-hover-orange:hover {
+            background-color: rgba(249, 115, 22, 0.1); /* Semi-transparent orange */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        /* Hover effects for teal content blocks */
+        .content-block-hover-teal:hover {
+            background-color: rgba(20, 184, 166, 0.1); /* Semi-transparent teal */
+            box-shadow: 0 0 15px var(--yellow-primary); /* Glowing yellow shadow */
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Play button hover effect */
+        .play-button:hover {
+            color: var(--yellow-primary);
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Pulsing animation keyframes */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        /* Animated class for pulsing effect */
+        .pulse-text {
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Drag and Drop Specific Styles */
+        .draggable {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .draggable:hover {
+            background-color: #ffc700;
+            color: #141414;
+        }
+        .dropzone {
+            min-width: 100px;
+            min-height: 40px;
+            border: 2px dashed #ffc700;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            text-align: center;
+        }
+        .filled-dropzone {
+            background-color: #ffc700;
+            color: #141414;
+            font-weight: bold;
+            border: 2px solid #ffc700;
+        }
+        
+        .correct-answer {
+            color: #22c55e;
+        }
+        
+        .incorrect-answer {
+            color: #E50914;
+        }
+    </style>
+</head>
+<body class="bg-[#141414] text-white font-sans p-8">
+
+    <!-- Header Section -->
+    <header class="text-center mb-16">
+        <h1 class="text-5xl font-bold text-[#ffc700] title-glow-hover pulse-text mb-2 md:text-6xl">Lego Block Method</h1>
+        <h2 class="text-xl text-white opacity-70 md:text-2xl">Professional Communication for Brazilians</h2>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto space-y-8">
+
+        <!-- Introductory Section -->
+        <section class="p-6 rounded-xl border-2 border-[#E50914] bg-white bg-opacity-5">
+            <h3 class="text-2xl font-bold mb-4 text-white">Introduction: The "Lego-block" Method</h3>
+            <p class="text-lg leading-relaxed text-gray-200">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Aprenda a comunicar como um nativo. O método é o **"Lego-block"**, onde cada frase e expressão é um bloco que se encaixa no outro, criando uma estrutura profissional e perfeita.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Learn to communicate like a native. The method is the **"Lego-block"** approach, where each phrase and expression is a block that fits into another, creating a professional and seamless structure.
+            </p>
+        </section>
+
+        <!-- Block 1: "I am afraid..." Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-red content-block-hover-red">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 1: The Soft Touch</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Comece sempre com uma introdução educada. A expressão <span class="underline text-yellow-400">"I am afraid..."</span> é o bloco inicial. Não significa "eu estou com medo"! Ela é um jeito muito educado de dar uma má notícia, como um "Sinto muito, mas..." ou "Infelizmente...". Usá-la mostra respeito e profissionalismo.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Always start with a polite introduction. The phrase <span class="underline text-yellow-400">"I am afraid..."</span> is the opening block. This phrase doesn't mean "I'm scared"! It's a very polite way to deliver bad news, like "I'm sorry, but..." or "Unfortunately...". Using it shows respect and professionalism.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold">I'm afraid I won't be able to approve that request.</span> (Sinto muito, mas não poderei aprovar essa solicitação.)</li>
+            </ul>
+        </section>
+        
+        <!-- Comment Box -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-6 rounded-lg shadow-md mb-8 max-w-3xl mx-auto">
+            <h2 class="text-xl font-bold mb-2">A Note on English Usage</h2>
+            <p class="text-sm italic mb-4">For my Brazilian friends!</p>
+            <p class="mb-4">
+                The phrases "unfortunately" and "I'm afraid" are very similar, but they have subtle differences in their real-world use.
+            </p>
+            <div class="space-y-4">
+                <div>
+                    <strong class="font-semibold text-blue-900">Unfortunately:</strong>
+                    <p>Use this to express regret about a fact or a situation that is out of your control. It's about the situation itself, not your personal feelings.</p>
+                    <div class="bg-white p-3 rounded-md mt-2 text-gray-700 border border-gray-200">
+                        <p class="italic">Example: "Unfortunately, the meeting has been canceled."</p>
+                        <p class="italic">This means: The meeting is canceled, and I'm sorry about that.</p>
+                    </div>
+                </div>
+                <div>
+                    <strong class="font-semibold text-blue-900">I'm afraid:</strong>
+                    <p>This is a more polite and softer way to deliver bad news. It suggests a personal feeling of regret, or it can be a polite way to disagree or decline a request.</p>
+                    <div class="bg-white p-3 rounded-md mt-2 text-gray-700 border border-gray-200">
+                        <p class="italic">Example: "I'm afraid I can't help you with that."</p>
+                        <p class="italic">This means: I feel bad, but I am unable to help you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Block 2: "I can't make it" Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-red content-block-hover-red">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 2: The Empathetic Refusal</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> O próximo passo é ser direto e claro sobre o que você não pode fazer. A expressão <span class="underline text-teal-400">"...I can't make it"</span> é perfeita para isso. Esta é a forma profissional de dizer "não posso ir", "não posso comparecer" ou "não vou conseguir". É muito mais polida do que apenas "I can't go." ou "I am busy."
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> The next step is to be direct and clear about what you can't do. The phrase <span class="underline text-teal-400">"...I can't make it"</span> is perfect for this. This is the professional way to say "I can't go," "I can't attend," or "I won't be able to." It is much more polite than just "I can't go." or "I'm busy."
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold">I'm sorry, I have a prior commitment and can't make it to the meeting.</span> (Desculpe, tenho um compromisso anterior e não poderei comparecer à reunião.)</li>
+            </ul>
+        </section>
+
+        <!-- Block 3: The Professional Justification Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-blue content-block-hover-blue">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 3: The Professional Justification</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Nativos apreciam quando você dá uma razão breve e clara. As frases <span class="underline text-purple-400">"I have a prior commitment"</span> ou <span class="underline text-purple-400">"I am double-booked"</span> são ideais. A primeira significa que você já tem um compromisso agendado. A segunda, um pouco mais informal mas ainda profissional, significa que sua agenda tem dois eventos no mesmo horário. Ambas são melhores que o vago "I am busy."
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Natives appreciate it when you give a brief and clear reason. The phrases <span class="underline text-purple-400">"I have a prior commitment"</span> or <span class="underline text-purple-400">"I am double-booked"</span> are ideal. The first means you already have a scheduled engagement. The second, slightly more informal but still professional, means your calendar has two events at the same time. Both are better que o vago "I am busy."
+            </p>
+        </section>
+
+        <!-- Block 4: The Unforeseen Event Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-blue content-block-hover-blue">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 4: The Unforeseen Event</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Para aqueles momentos de última hora, use estas frases como justificativa. O conceito principal a se lembrar é <span class="underline text-yellow-400">(Something just came up)</span>.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> For those last-minute moments, use these phrases as justification. The main concept to remember is <span class="underline text-yellow-400">(Something just came up)</span>. It's a professional and polite way to communicate an unforeseen event.
+            </p>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">Something urgent just popped up.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> Isso significa que uma tarefa importante e imprevista apareceu de repente.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> This means an important, unforeseen task suddenly appeared.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">Something unexpected just came up.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> Isso indica que um evento ou problema inesperado exige seu tempo.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> This indicates a surprise event or issue requires your time.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">A critical issue just arose.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> Use para um problema muito sério que precisa de uma ação imediata.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> Use this for a very serious problem that needs immediate action.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">A high-priority task just landed on my plate.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> É uma forma informal mas profissional de dizer que você recebeu uma tarefa de alta prioridade.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> This is an informal but professional way to say you received a top-priority job.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">An urgent matter requires my immediate attention.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> Uma forma formal e forte de dizer que você deve lidar com algo agora.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> A formal and strong way to say you must deal with something right now.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold"><span class="underline text-yellow-400">There's an issue that needs to be addressed right away.</span></h4>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[POR]</span> Esta é uma forma clara e direta de afirmar que há um problema imediato.
+                        <span class="font-bold text-[#ffc700]">[ENG]</span> This is a clear, direct way to state an immediate problem.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 5: The Solution Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-blue content-block-hover-blue">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 5: The Solution</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Não apenas recuse, ofereça uma alternativa. A solução pode ser de duas formas: <span class="underline text-red-400">"May I take a rain check?"</span> ou <span class="underline text-red-400">"Would you mind if we reschedule?"</span>.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Don't just decline, offer an alternative. The solution can be one of two forms: <span class="underline text-red-400">"May I take a rain check?"</span> or <span class="underline text-red-400">"Would you mind if we reschedule?"</span>. The first is a common idiom to propose postponing to an undefined future date, while the second directly suggests rescheduling.
+            </p>
+        </section>
+
+        <!-- Block 6: The Empathy Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-blue content-block-hover-blue">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 6: The Empathy</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Adicionar um pedido de desculpas sincero mostra que você se importa com a agenda da outra pessoa. Use <span class="underline text-yellow-400">"I am sorry."</span>. Para uma opção mais formal, use <span class="underline text-yellow-400">"My apologies."</span>
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Adding a sincere apology shows that you care about the other person's schedule. Use <span class="underline text-yellow-400">"I am sorry."</span> or, for a more formal or advanced option, <span class="underline text-yellow-400">"My apologies."</span>
+                Although "I am afraid" already has a touch of apology, adding "I am sorry" to the beginning of the complete sentence demonstrates even more politeness and empathy.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold">I'm sorry, but that information is confidential.</span> (Sinto muito, mas essa informação é confidencial.)</li>
+            </ul>
+        </section>
+
+        <!-- Block 7: Rescheduling Proposals Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-green content-block-hover-green">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 7: The Rescheduling Proposal</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Você pode usar perguntas para fazer propostas de um jeito mais informal e amigável, mas ainda profissional.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> You can use questions to make proposals in a more informal and friendly, but still professional, way.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold"><span class="underline text-teal-400">How about...?</span>:</span> "How about we meet on Thursday at 3 PM?" or "How about we grab a coffee later this week?"</li>
+                <li><span class="font-bold"><span class="underline text-teal-400">How's that for...?</span>:</span> "I can do next Tuesday, how's that for a new time?" or "We could move the deadline to Friday. How's that for a plan?"</li>
+                <li><span class="font-bold"><span class="underline text-teal-400">Would tomorrow work for you?</span>:</span> "Would tomorrow work for you?" or "Would Friday morning work for you?"</li>
+            </ul>
+        </section>
+
+        <!-- Block 8: The Confirmation Section -->
+        <section class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-green content-block-hover-green">
+            <h3 class="text-2xl font-bold mb-4 text-white">Block 8: The Confirmation</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-2">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Ao contrário do "I can't make it", estas frases são para confirmar sua presença de forma clara e positiva.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> Unlike "I can't make it," these phrases are for confirming your attendance in a clear and positive way.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold"><span class="underline text-purple-400">I can make it.</span></span> (Eu consigo ir)</li>
+                <li><span class="font-bold"><span class="underline text-purple-400">I'll be there.</span></span> (Estarei lá)</li>
+                <li><span class="font-bold"><span class="underline text-purple-400">Looking forward to it!</span></span> (Estou ansioso por isso!)</li>
+                <li><span class="font-bold"><span class="underline text-purple-400">See you there!</span></span> (A gente se vê lá!)</li>
+            </ul>
+        </section>
+
+        <!-- --- Putting the Blocks Together Section --- -->
+        <section id="putting-it-together" class="p-6 rounded-xl border-2 border-[#ffc700] bg-white bg-opacity-5">
+            <h3 class="text-2xl font-bold mb-4 text-white">Putting the Blocks Together</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-6">
+                Let's see how these blocks combine into natural, professional sentences for common workplace situations.
+            </p>
+
+            <!-- Example 1: Declining last minute -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-times-circle text-red-500 mr-2"></i>Declining a Last-Minute Commitment</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Poxa, preciso cancelar o almoço de hoje. Me desculpa, mas surgiu uma entrega urgente no meu projeto. Não posso ir."</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-red-500">I'm sorry,</span> <span class="text-blue-500">I'm afraid</span> <span class="text-yellow-500">I can't make it.</span> <span class="text-green-500">Something urgent just came up.</span> <span class="text-purple-500">Would you mind if we reschedule for tomorrow?</span>
+                </p>
+            </div>
+
+            <!-- Example 2: Declining and Proposing a New Date -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-calendar-alt text-blue-500 mr-2"></i>Declining and Proposing a New Date</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Não consigo ir na sua mesa pra revisar o documento hoje. Tô no meio de uma call super importante. A gente pode fazer isso mais tarde, tipo, depois das 3?"</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-blue-500">I'm afraid</span> <span class="text-yellow-500">I can't come to your desk to review the document right now.</span> <span class="text-green-500">I'm in the middle of a super important call.</span> <span class="text-purple-500">Would you mind if we reschedule for later, how about after 3 PM?</span>
+                </p>
+            </div>
+
+            <!-- Example 3: Confirming Your Presence -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-check-circle text-green-500 mr-2"></i>Confirming Your Presence</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Galera, beleza! Recebi o convite do happy hour. Eu vou com certeza! Tamo junto!"</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-blue-500">Hey team,</span> <span class="text-yellow-500">thanks for the invite to the happy hour!</span> <span class="text-green-500">I can make it.</span> <span class="text-purple-500">Looking forward to it!</span>
+                </p>
+            </div>
+
+            <!-- Example 4: Declining a social event -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-home text-purple-500 mr-2"></i>Declining a Social Event (Daily Life)</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Nossa, adorei o convite para o jantar hoje à noite. Mas não vou poder ir. Minha mãe tá doente e preciso ficar com ela."</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-red-500">I'm so sorry,</span> <span class="text-blue-500">but I'm afraid</span> <span class="text-yellow-500">I can't make it to dinner tonight.</span> <span class="text-green-500">Something came up at home</span> <span class="text-purple-500">and I need to be with my family.</span>
+                </p>
+            </div>
+
+            <!-- Example 5: Confirming a weekend trip -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-car text-orange-500 mr-2"></i>Confirming a Weekend Trip (Daily Life)</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"E aí pessoal! Vi a mensagem sobre a viagem do fim de semana. Contem comigo, eu consigo ir!"</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-blue-500">Hey everyone!</span> <span class="text-yellow-500">Just saw the message about the weekend trip.</span> <span class="text-green-500">I can make it!</span> <span class="text-purple-500">I'm really looking forward to it!</span>
+                </p>
+            </div>
+
+            <!-- Example 6: Rescheduling a meeting -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-clock text-blue-500 mr-2"></i>Rescheduling a Meeting (Work)</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Oi! Recebi o convite pra reunião de amanhã, mas eu não vou estar disponível nesse horário. Posso participar na parte da tarde?"</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-blue-500">I'm afraid</span> <span class="text-yellow-500">I have a prior commitment during that time.</span> <span class="text-green-500">How about we reschedule for tomorrow afternoon?</span> <span class="text-purple-500">Would that work for you?</span>
+                </p>
+            </div>
+
+            <!-- Example 7: Confirming receipt and next steps -->
+            <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-2"><i class="fas fa-envelope-open-text text-teal-500 mr-2"></i>Confirming Receipt (Work)</h4>
+                <p class="text-gray-400 text-sm italic mb-2">Original Brazilian Portuguese:</p>
+                <p class="text-gray-200 mb-2">"Olá. Recebi seu e-mail com a apresentação. Já estou revisando e te dou um retorno em breve."</p>
+                <p class="text-gray-400 text-sm italic mb-2">Lego-Block Translation:</p>
+                <p class="text-gray-200 font-bold leading-relaxed">
+                    <span class="text-blue-500">Hello.</span> <span class="text-yellow-500">Thanks for sending over the presentation.</span> <span class="text-green-500">I am reviewing it right now and will get back to you shortly.</span>
+                </p>
+            </div>
+
+        </section>
+
+        <!-- --- New "Double Apology" Nuance Section --- -->
+        <section id="double-apology" class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-orange content-block-hover-orange">
+            <h3 class="text-2xl font-bold mb-4 text-white">The "Double Apology" Nuance</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[POR]</span> A combinação de <span class="underline text-yellow-400">"I'm sorry"</span> e <span class="underline text-red-400">"I'm afraid"</span> é usada para expressar um arrependimento mais forte e educado. É uma forma de dizer: "Me desculpe por ter que te dar essa má notícia, mas infelizmente não consigo fazer o que você pediu".
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> The combination of <span class="underline text-yellow-400">"I'm sorry"</span> and <span class="underline text-red-400">"I'm afraid"</span> is used to express a stronger and more polite regret. It's a way of saying: "I apologize for having to give you this bad news, but unfortunately I can't do what you asked."
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-200">
+                <li><span class="font-bold">I'm sorry, I'm afraid I can't make it.</span> (Sinto muito, mas infelizmente não consigo ir.)</li>
+            </ul>
+        </section>
+
+
+        <!-- --- Understanding Nuance Section (NEW) --- -->
+        <section id="nuance" class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-teal content-block-hover-teal">
+            <h3 class="text-2xl font-bold mb-4 text-white">Understanding Nuance: When to Use Each Phrase</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-6">
+                While all these phrases can be used to describe an urgent situation, they have different levels of formality and imply different types of urgency. Choosing the right one shows your attention to detail and professionalism.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Something urgent just popped up. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">Something urgent just popped up.</h4>
+                    <p class="text-sm italic text-gray-400">
+                        <span class="font-bold">[Use Case]</span> A sudden, important task or request from a colleague or client.
+                    </p>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **common and slightly informal** phrase. It's great for quick, direct communication with colleagues or in team chat. It's less formal than "an urgent matter," but still professional.
+                    </p>
+                </div>
+
+                <!-- Something unexpected just came up. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">Something unexpected just came up.</h4>
+                    <p class="text-sm italic text-gray-400">
+                        <span class="font-bold">[Use Case]</span> A personal matter, a sudden meeting, or a minor technical problem.
+                    </p>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **standard, polite, and neutral** phrase. It doesn't imply the task is high-priority for the company, but simply that it was not planned. It's a very safe choice for both professional and personal contexts.
+                    </p>
+                </div>
+
+                <!-- A critical issue just arose. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">A critical issue just arose.</h4>
+                    <p class="text-sm italic text-gray-400">
+                        <span class="font-bold">[Use Case]</span> A serious problem that affects a project, a system, or a client.
+                    </p>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **formal and very strong** phrase. Use it when the issue is significant and requires immediate attention to avoid a major negative impact. It's a phrase you would use in a professional email or when reporting to a manager.
+                    </p>
+                </div>
+
+                <!-- A high-priority task just landed on my plate. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">A high-priority task just landed on my plate.</h4>
+                    <p class="text-sm italic text-gray-400">
+                        <span class="font-bold">[Use Case]</span> When a new work assignment with a tight deadline is assigned to you.
+                    </p>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **professional but slightly more metaphorical** phrase. "Landed on my plate" means it was assigned to you. It's an excellent way to communicate that your workload has changed due to a new, important task.
+                    </p>
+                </div>
+
+                <!-- An urgent matter requires my immediate attention. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">An urgent matter requires my immediate attention.</h4>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **very formal** and direct phrase. It's perfect for official emails, formal apologies for a missed meeting, or when speaking to a senior manager. It leaves no room for doubt about the seriousness of the situation.
+                    </p>
+                </div>
+
+                <!-- There's an issue that needs to be addressed right away. -->
+                <div class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="font-bold text-xl text-yellow-400">There's an issue that needs to be addressed right away.</h4>
+                    <p class="text-sm italic text-gray-400">
+                        <span class="font-bold">[Use Case]</span> A problem that needs a resolution within a short timeframe.
+                    </p>
+                    <p class="text-sm mt-2 text-gray-200">
+                        This is a **clear, direct, and universally understood** phrase. It's a good alternative to the more formal "critical issue." "Right away" is a clear call to action and leaves no ambiguity about the urgency.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Two Expressions That Always Work Section (NEW) --- -->
+        <section id="universal-expressions" class="content-block relative p-6 rounded-xl bg-gray-900 bg-opacity-70 content-block-purple content-block-hover-purple">
+            <h3 class="text-2xl font-bold mb-4 text-white">Duas Expressões Que Sempre Funcionam</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[POR]</span> Estas duas expressões são um verdadeiro coringa para justificar sua ausência ou recusa em qualquer situação, de forma educada e profissional.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-6">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> These two expressions are a true ace in the hole for justifying your absence or refusal in any situation, in a polite and professional manner.
+            </p>
+
+            <ul class="list-disc list-inside space-y-4 text-gray-200">
+                <li>
+                    <span class="font-bold">1. Para compromissos já agendados:</span>
+                    <p class="text-lg mt-1"><span class="underline text-yellow-400">"I'm afraid I have a prior commitment."</span></p>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[Uso]</span> Use esta expressão quando você já tem algo na sua agenda. É formal e universalmente entendida.
+                    </p>
+                </li>
+                <li>
+                    <span class="font-bold">2. Para imprevistos de última hora:</span>
+                    <p class="text-lg mt-1"><span class="underline text-yellow-400">"I'm afraid something has just come up."</span></p>
+                    <p class="text-sm text-gray-400 italic">
+                        <span class="font-bold text-[#ffc700]">[Uso]</span> Perfeito para quando algo inesperado acontece. É educado, claro e não exige detalhes.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Important Note Section -->
+        <section class="p-6 rounded-xl border-2 border-[#ffc700] bg-white bg-opacity-5">
+            <h3 class="text-2xl font-bold mb-4 text-white">Important Note</h3>
+            <p class="text-lg leading-relaxed text-gray-200">
+                <span class="font-bold text-[#ffc700]">[POR]</span> A chave para uma comunicação eficaz não é a tradução literal. Observe como as frases em português e inglês, apesar de terem estruturas diferentes, transmitem a mesma intenção. Em vez de traduzir palavra por palavra, foque em aprender o "bloco" de linguagem que expressa a ideia desejada de forma natural e profissional.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-200 mb-4">
+                <span class="font-bold text-[#ffc700]">[ENG]</span> The key to effective communication is not a literal translation. Notice how the Portuguese and English phrases, despite having different structures, convey the same intention. Instead of translating word for word, focus on learning the language "block" that expresses the desired idea in a natural and professional way.
+            </p>
+        </section>
+
+        <!-- Practice Time Section -->
+        <section id="practice-time" class="p-6 rounded-xl border-2 border-[#ffc700] bg-white bg-opacity-5">
+            <h3 class="text-2xl font-bold mb-4 text-white">Practice Time: Build Your Sentences!</h3>
+            <p class="text-lg leading-relaxed text-gray-200 mb-6">
+                Now it's your turn! Drag and drop the words to create a polite and professional sentence.
+            </p>
+            
+            <!-- Drag and Drop Exercise 1: Rescheduling -->
+            <div class="mb-8">
+                <h4 class="text-xl font-bold text-white mb-4">Exercise 1: Rescheduling a Meeting</h4>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-lg text-gray-400 mb-4">"Would you mind if we postponed for another day?"</p>
+                    <div class="flex flex-wrap gap-2 mb-6 drag-container" id="drag-container-1">
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="Would you mind">Would you mind</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="if we">if we</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="reschedule">reschedule</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="for another">for another</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="day?">day?</div>
+                    </div>
+                    <div class="flex flex-wrap items-center space-x-2 space-y-2 sentence-builder" id="sentence-builder-1">
+                        <div class="dropzone" id="dropzone-1-1"></div>
+                        <div class="dropzone" id="dropzone-1-2"></div>
+                        <div class="dropzone" id="dropzone-1-3"></div>
+                        <div class="dropzone" id="dropzone-1-4"></div>
+                        <div class="dropzone" id="dropzone-1-5"></div>
+                    </div>
+                    <button class="reset-button bg-gray-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-gray-500 transition-colors duration-300">Reset</button>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Exercise 2: Confirmation -->
+            <div class="mb-8">
+                <h4 class="text-xl font-bold text-white mb-4">Exercise 2: Confirming Attendance</h4>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-lg text-gray-400 mb-4">"I'll be there, I can't wait!"</p>
+                    <div class="flex flex-wrap gap-2 mb-6 drag-container" id="drag-container-2">
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="I'll be">I'll be</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="there,">there,</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="I'm really">I'm really</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="looking forward">looking forward</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="to it!">to it!</div>
+                    </div>
+                    <div class="flex flex-wrap items-center space-x-2 space-y-2 sentence-builder" id="sentence-builder-2">
+                        <div class="dropzone" id="dropzone-2-1"></div>
+                        <div class="dropzone" id="dropzone-2-2"></div>
+                        <div class="dropzone" id="dropzone-2-3"></div>
+                        <div class="dropzone" id="dropzone-2-4"></div>
+                        <div class="dropzone" id="dropzone-2-5"></div>
+                    </div>
+                    <button class="reset-button bg-gray-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-gray-500 transition-colors duration-300">Reset</button>
+                </div>
+            </div>
+            
+            <!-- Drag and Drop Exercise 3: Apology and Refusal -->
+            <div class="mb-8">
+                <h4 class="text-xl font-bold text-white mb-4">Exercise 3: Apology and Refusal</h4>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-lg text-gray-400 mb-4">"I'm sorry, my schedule is packed today."</p>
+                    <div class="flex flex-wrap gap-2 mb-6 drag-container" id="drag-container-3">
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="I'm sorry,">I'm sorry,</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="but I have">but I have</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="a prior commitment">a prior commitment</div>
+                        <div class="draggable p-2 rounded-md bg-[#ffc700] text-[#141414] font-bold" data-word="today.">today.</div>
+                    </div>
+                    <div class="flex flex-wrap items-center space-x-2 space-y-2 sentence-builder" id="sentence-builder-3">
+                        <div class="dropzone" id="dropzone-3-1"></div>
+                        <div class="dropzone" id="dropzone-3-2"></div>
+                        <div class="dropzone" id="dropzone-3-3"></div>
+                        <div class="dropzone" id="dropzone-3-4"></div>
+                    </div>
+                    <button class="reset-button bg-gray-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-gray-500 transition-colors duration-300">Reset</button>
+                </div>
+            </div>
+
+            <!-- New Fill-in-the-Blanks Exercise -->
+            <div class="mb-8">
+                <h4 class="text-xl font-bold text-white mb-4">Exercise 4: Fill in the Blanks</h4>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-lg text-gray-200">I'm afraid I won't be able to&nbsp;</span>
+                        <input type="text" id="fill-in-the-blanks-1" placeholder="Type here..." class="flex-1 bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffc700]">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-lg text-gray-200">Could we&nbsp;</span>
+                        <input type="text" id="fill-in-the-blanks-2" placeholder="Type here..." class="flex-1 bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffc700]">
+                        <span class="text-lg text-gray-200">the meeting for tomorrow?</span>
+                    </div>
+                    <button class="reset-button bg-gray-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-gray-500 transition-colors duration-300">Reset</button>
+                </div>
+            </div>
+
+            <!-- New Translation Exercise -->
+            <div class="mb-8">
+                <h4 class="text-xl font-bold text-white mb-4">Exercise 5: Translation Challenge</h4>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-lg text-gray-400 mb-4">Translate the following into English, using the Lego Block Method:</p>
+                    <p class="text-lg text-gray-200 font-bold mb-4">
+                        "Estou com um compromisso e não poderei comparecer à reunião."
+                    </p>
+                    <textarea id="translation-exercise" rows="3" placeholder="Type your translation here..." class="w-full bg-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ffc700]"></textarea>
+                    <button class="reset-button bg-gray-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-gray-500 transition-colors duration-300">Reset</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <button id="check-answers-btn" class="bg-[#ffc700] text-[#141414] font-bold py-3 px-8 rounded-full hover:bg-white transition-colors duration-300">
+                    Check My Answers
+                </button>
+            </div>
+            
+            <div id="feedback" class="mt-4 p-4 rounded-lg text-lg hidden"></div>
+        </section>
+
+        <!-- --- About the Author Section --- -->
+        <section id="about-author" class="p-6 rounded-xl border-2 border-[#8b5cf6] bg-white bg-opacity-5 content-block-purple content-block-hover-purple">
+            <h3 class="text-2xl font-bold mb-4 text-white">About the Author</h3>
+            <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                <div class="flex-shrink-0">
+                    
+                </div>
+                <div class="text-lg leading-relaxed text-gray-200">
+                    <p class="mb-2">This learning method was developed by Daby, a passionate educator with over a decade of experience teaching English for business and professional communication. The Lego-block approach was created to help non-native speakers break away from literal translations and build fluency by focusing on phrases that native speakers use every day.</p>
+                    <p>Daby's mission is to empower professionals to communicate with confidence, empathy, and clarity in the global marketplace. This website is a step towards making that a reality for everyone.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exercises = [
+                {
+                    words: ["Would you mind", "if we", "reschedule", "for another", "day?"],
+                    id: 1
+                },
+                {
+                    words: ["I'll be", "there,", "I'm really", "looking forward", "to it!"],
+                    id: 2
+                },
+                {
+                    words: ["I'm sorry,", "but I have", "a prior commitment", "today."],
+                    id: 3
+                }
+            ];
+            
+            const fillInTheBlanksAnswers = {
+                'fill-in-the-blanks-1': 'approve that request.',
+                'fill-in-the-blanks-2': 'reschedule'
+            };
+
+            const translationAnswer = "I'm afraid I have a prior commitment and I can't make it to the meeting.";
+
+            // --- Drag and Drop Functionality ---
+            const allDraggables = document.querySelectorAll('.draggable');
+            const allDropzones = document.querySelectorAll('.dropzone');
+            let selectedWord = null;
+
+            allDraggables.forEach(draggable => {
+                draggable.addEventListener('click', () => {
+                    const parentContainer = draggable.closest('.drag-container');
+                    if (parentContainer) {
+                        const previousSelected = parentContainer.querySelector('.bg-red-500');
+                        if (previousSelected) {
+                            previousSelected.classList.remove('bg-red-500', 'text-white');
+                            previousSelected.classList.add('bg-[#ffc700]', 'text-[#141414]');
+                        }
+                    }
+
+                    selectedWord = draggable;
+                    selectedWord.classList.add('bg-red-500', 'text-white');
+                    selectedWord.classList.remove('bg-[#ffc700]', 'text-[#141414]');
+                });
+            });
+
+            allDropzones.forEach(dropzone => {
+                dropzone.addEventListener('click', () => {
+                    if (selectedWord) {
+                        const existingWord = dropzone.querySelector('.draggable');
+                        if (existingWord) {
+                            const dragContainer = selectedWord.closest('.drag-container');
+                            if (dragContainer) {
+                                dragContainer.appendChild(existingWord);
+                                existingWord.classList.remove('bg-red-500', 'text-white', 'filled-dropzone');
+                                existingWord.classList.add('bg-[#ffc700]', 'text-[#141414]');
+                            }
+                        }
+                        
+                        dropzone.appendChild(selectedWord);
+                        selectedWord.classList.remove('bg-red-500', 'text-white');
+                        selectedWord.classList.add('filled-dropzone');
+                        selectedWord = null;
+                    }
+                });
+            });
+
+            // --- Reset Button Logic ---
+            const resetButtons = document.querySelectorAll('.reset-button');
+            resetButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const exerciseContainer = event.target.closest('div');
+                    
+                    // Reset Drag and Drop
+                    const dragContainer = exerciseContainer.querySelector('.drag-container');
+                    if (dragContainer) {
+                        const filledDropzones = exerciseContainer.querySelectorAll('.filled-dropzone');
+                        filledDropzones.forEach(word => {
+                            word.classList.remove('filled-dropzone', 'correct-answer', 'incorrect-answer');
+                            word.classList.add('bg-[#ffc700]', 'text-[#141414]');
+                            dragContainer.appendChild(word);
+                        });
+                    }
+
+                    // Reset Fill in the Blanks
+                    const inputFields = exerciseContainer.querySelectorAll('input[type="text"]');
+                    inputFields.forEach(input => {
+                        input.value = '';
+                        input.classList.remove('correct-answer', 'incorrect-answer');
+                    });
+                    
+                    // Reset Translation
+                    const translationField = exerciseContainer.querySelector('textarea');
+                    if (translationField) {
+                        translationField.value = '';
+                        translationField.classList.remove('correct-answer', 'incorrect-answer');
+                    }
+                    
+                    const feedbackDiv = document.getElementById('feedback');
+                    feedbackDiv.classList.add('hidden');
+                });
+            });
+
+            // --- Check Answers Button Logic ---
+            const checkAnswersBtn = document.getElementById('check-answers-btn');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            checkAnswersBtn.addEventListener('click', () => {
+                let allCorrect = true;
+                const feedbackMessages = [];
+                
+                // Check Drag and Drop Exercises
+                const sentenceBuilders = document.querySelectorAll('.sentence-builder');
+                sentenceBuilders.forEach((builder, index) => {
+                    const dropzones = builder.querySelectorAll('.dropzone');
+                    const wordsUsed = Array.from(dropzones).map(zone => {
+                        const wordElement = zone.querySelector('.draggable');
+                        return wordElement ? wordElement.dataset.word : null;
+                    });
+                    
+                    const correctWords = exercises[index].words;
+                    let exerciseCorrect = true;
+                    
+                    if (wordsUsed.length !== correctWords.length) {
+                        exerciseCorrect = false;
+                    } else {
+                        wordsUsed.forEach((word, i) => {
+                            if (word !== correctWords[i]) {
+                                exerciseCorrect = false;
+                            }
+                        });
+                    }
+
+                    if (exerciseCorrect) {
+                        feedbackMessages.push(`<i class="fas fa-check-circle correct-answer"></i> Exercise #${index + 1}: Correct! You built the sentence perfectly.`);
+                    } else {
+                        feedbackMessages.push(`<i class="fas fa-times-circle incorrect-answer"></i> Exercise #${index + 1}: Not quite right. Take a look at the original phrase and try again.`);
+                        allCorrect = false;
+                    }
+                });
+
+                // Check Fill in the Blanks Exercises
+                const fillInBlanks1 = document.getElementById('fill-in-the-blanks-1').value.trim();
+                const fillInBlanks2 = document.getElementById('fill-in-the-blanks-2').value.trim();
+                
+                if (fillInBlanks1.toLowerCase() === fillInTheBlanksAnswers['fill-in-the-blanks-1'].toLowerCase()) {
+                    feedbackMessages.push(`<i class="fas fa-check-circle correct-answer"></i> Exercise #4, Part 1: Correct!`);
+                } else {
+                    feedbackMessages.push(`<i class="fas fa-times-circle incorrect-answer"></i> Exercise #4, Part 1: Incorrect. The correct phrase is "${fillInTheBlanksAnswers['fill-in-the-blanks-1']}".`);
+                    allCorrect = false;
+                }
+                
+                if (fillInBlanks2.toLowerCase() === fillInTheBlanksAnswers['fill-in-the-blanks-2'].toLowerCase()) {
+                    feedbackMessages.push(`<i class="fas fa-check-circle correct-answer"></i> Exercise #4, Part 2: Correct!`);
+                } else {
+                    feedbackMessages.push(`<i class="fas fa-times-circle incorrect-answer"></i> Exercise #4, Part 2: Incorrect. The correct word is "${fillInTheBlanksAnswers['fill-in-the-blanks-2']}".`);
+                    allCorrect = false;
+                }
+
+                // Check Translation Exercise
+                const userTranslation = document.getElementById('translation-exercise').value.trim();
+                if (userTranslation.toLowerCase().includes("prior commitment") && userTranslation.toLowerCase().includes("can't make it") && userTranslation.toLowerCase().includes("i'm afraid")) {
+                    feedbackMessages.push(`<i class="fas fa-check-circle correct-answer"></i> Exercise #5: Correct! You captured the main ideas.`);
+                } else {
+                    feedbackMessages.push(`<i class="fas fa-times-circle incorrect-answer"></i> Exercise #5: Not quite right. Try again using the phrases you've learned. A good translation would be: "${translationAnswer}"`);
+                    allCorrect = false;
+                }
+
+                feedbackDiv.innerHTML = feedbackMessages.join('<br>');
+                feedbackDiv.classList.remove('hidden');
+                
+                if (allCorrect) {
+                    feedbackDiv.classList.remove('text-red-400');
+                    feedbackDiv.classList.add('bg-gray-700', 'bg-opacity-50', 'text-green-400');
+                } else {
+                    feedbackDiv.classList.remove('text-green-400');
+                    feedbackDiv.classList.add('bg-gray-700', 'bg-opacity-50', 'text-red-400');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
